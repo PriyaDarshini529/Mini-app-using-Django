@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator Main Page</h1>
+    {% if error %}
+    <h1 style="color: red">{{error}}</h1>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+    <label for="num1">enter the number </label>
+    <input type="text" name="num1"  placeholder="enter the number " required> <br><br>
+    <label for="num2">enter the number </label>
+    <input type="text" name="num2"  placeholder="enter the number" required><br><br>
+    <label for="oper">enter the operation </label>
+    <input type="text" name="oper"  placeholder="enter the operation" required><br><br>
+    <button type="submit"> submit </button>
+    </form>
+    <br>
+    <a href="{% url "base" %}">Back to Home </a>
+    {% if result %}
+    <h1>result:{{result}}</h1>
+    {% endif %}
+</body>
+</html>

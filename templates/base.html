@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Utility App</title>
+</head>
+<body>
+    <h1>Hello! {{user.username}},</h1>
+    <h1>Welcome to the Utility App</h1>
+    <ul>
+        <li><a href="{% url 'predict_image' %}">Brain Tumor Detection</a></li><br>
+        <li><a href="{% url 'calculator' %}">Simple Calculator</a></li><br>
+        <li><a href="{% url 'test' %}">Diabetes Prediction</a></li><br>
+        <a href="{% url 'logout_page' %}">Log Out</a>
+    </ul>
+</body>
+</html>

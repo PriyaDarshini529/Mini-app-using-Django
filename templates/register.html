@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+   <h1> Register Page </h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+   <form method="POST">
+      {% csrf_token %}
+      <label> user name</label>
+      <input type="text" name="name" placeholder="enter name"  required><br><br>
+      <label> password</label>
+      <input type="password" name="password" placeholder="enter password"  required><br><br>
+      <label>Confirm password</label>
+      <input type="password" name="conform_password" placeholder="reenter password"  required><br><br>
+      <button type="submit">Register</button>
+   </form>
+   <br>
+  <a href ="{% url 'login_page' %}">login</a>
+</body>
+</html>

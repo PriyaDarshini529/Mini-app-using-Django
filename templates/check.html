@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label> Enter Pregnancies</label>
+        <input name="Pregnancies" placeholder="enter the number" required><br><br>
+        <label> Enter Glucose</label>
+        <input name="Glucose" placeholder="enter the number" required><br><br>
+        <label> Enter BloodPressure</label>
+        <input name="BloodPressure" placeholder="enter the number" required><br><br>
+        <label> Enter SkinThickness</label>
+        <input name="SkinThickness" placeholder="enter the number" required><br><br>
+        <label>Enter Insulin</label>
+        <input name="Insulin" placeholder="enter the number" required><br><br>
+        <label> Enter BMI</label>
+        <input name="BMI" placeholder="enter the number" required><br><br>
+        <label> Enter DiabetesPedigreeFunction</label>
+        <input name="DiabetesPedigreeFunction" placeholder="enter the number" required><br><br>
+        <label> Enter Age</label>
+        <input name="Age" placeholder="enter the number" required><br><br>
+        <button type="submit"> predict </button>
+    </form>
+    <br>
+    <a href="{% url "base" %}">Back to Home </a>
+    {% if result %}
+    <h1>result:{{result}}</h1>
+    {% endif %}
+    
+
+</body>
+</html>
